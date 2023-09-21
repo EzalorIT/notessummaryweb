@@ -38,12 +38,8 @@ function App() {
   };
 
   return (
-      <Authenticator
-      components={components}
-      >
-          {({ signOut, user }) => (
-              <div>
-                  <button className="sign-out" onClick={signOut}>Sign out</button>
+    
+              <div>                  
                   <h1>AWS LocalGov - Transcribe & Translate Tool</h1>
                   <h2>Use this service to:</h2>
                   <ul>
@@ -54,12 +50,11 @@ function App() {
                   </ul>
                   <form onSubmit={handleSubmit}>
                     <input type="file" onChange={handleChange}/>
-                    <input type="hidden" name="user" value={user.username} />
+                    <input type="hidden" name="user" value=""/>
                     <button type="submit">Submit</button>
                   </form>
               </div>
-          )}
-      </Authenticator>
+    
   );
 }
 
